@@ -84,7 +84,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/trebon/recovery/sbin/rmt_storage_recovery:recovery/root/sbin/rmt_storage_recovery \
     device/samsung/trebon/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/samsung/trebon/recovery/postrecoveryboot.sh:recovery/system/bin/postrecoveryboot.sh
+    device/samsung/trebon/recovery/postrecoveryboot.sh:recovery/system/bin/postrecoveryboot.sh \
+    device/samsung/trebon/recovery/poweroff.sh:recovery/root/sbin/poweroff.sh
 
 # FM
 PRODUCT_COPY_FILES += \

@@ -19,8 +19,10 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_SOURCE := kernel/samsung/msm7x27a
-TARGET_KERNEL_CONFIG := trebon_defconfig
+TARGET_PREBUILT_KERNEL := device/samsung/trebon/kernel
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom
+#TARGET_KERNEL_SOURCE := kernel/samsung/msm7x27a
+#TARGET_KERNEL_CONFIG := cyanogenmod/trebon_defconfig
 
 # Platform flags
 TARGET_ARCH := arm
@@ -130,10 +132,15 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 12582912
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 524288000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 979369984
 
+# TWRP flags
+RECOVERY_VARIANT := twrp
+TW_THEME := portrait_mdpi
+TWHAVE_SELINUX := false
+TW_NO_CPU_TEMP := true
 # Recovery flags
 DEVICE_RESOLUTION := 320x480
 TARGET_RECOVERY_INITRC := device/samsung/trebon/recovery/init.recovery.qcom.rc
-TARGET_RECOVERY_FSTAB := device/samsung/trebon/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/samsung/trebon/rootdir/twrp.fstab
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 TARGET_RECOVERY_SWIPE := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
